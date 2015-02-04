@@ -3,7 +3,7 @@ require ::File.expand_path('../environment',  __FILE__)
 quote = Proc.new { |env| ['200', {'Content-Type' => 'text/plain'}, [APP_QUOTE] ] }
 
 map '/' do
-  run Proc.new { |env| ['200', {'Content-Type' => 'text/plain'}, ["Please specify quote path"] ] }
+  run Proc.new { |env| ['303', {'Content-Type' => 'text/plain'}, ["GET Path error: Please specify quote path"] ] }
 end
 
 map '/quote' do
