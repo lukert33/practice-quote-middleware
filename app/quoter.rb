@@ -7,6 +7,9 @@ class Quoter
     @quotes = no_linebreaks(quotes)
   end
 
+  def random_quote
+    @quotes.sample
+  end
 
   private
   def no_linebreaks(string_array)
