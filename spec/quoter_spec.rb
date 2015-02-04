@@ -20,7 +20,12 @@ describe "Quoter" do
   it "quotes collection#last equals the last quote in our library" do
     expect(ricky_quoter.quotes.last).to be_a String
     expect(ricky_quoter.quotes.last).to eq "We Shouldn't even need the word 'atheism'. If people didn't invent ridiculous imaginary Gods, rational people wouldn't have to deny them."
+  end
 
+  it "can return a single random quote" do
+    he_said = ricky_quoter.random_quote
+    expect(he_said).to be_a String
+    expect(ricky_quoter.quotes.include?(he_said)).to be true
   end
 
 end
